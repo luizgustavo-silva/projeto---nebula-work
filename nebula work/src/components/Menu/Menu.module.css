@@ -1,0 +1,15 @@
+.container {
+    height: 70px;
+    display: flex;
+}
+.containerNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    margin-left: 35%;
+}
+.navLink {
+    text-decoration: none;
+    color: #64359c;
+}
