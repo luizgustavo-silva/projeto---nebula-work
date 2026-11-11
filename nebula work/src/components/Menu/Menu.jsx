@@ -12,10 +12,8 @@ function Menu() {
                 <NavLink to="/empresas" className={styles.navLink}>Buscar empresas</NavLink>
             </nav>
             <div className={styles.cantoDireito}>
-            <div className={styles.btnsearch}>
-                <button><FiSearch /> Buscar</button>
-            </div>
-            <button><GiExitDoor />Entrar</button>
+                <button className={styles.btnsearch}><FiSearch /> Buscar</button>
+                <button className={styles.entrar}><GiExitDoor />Entrar</button>
             </div>
         </header>
     )
