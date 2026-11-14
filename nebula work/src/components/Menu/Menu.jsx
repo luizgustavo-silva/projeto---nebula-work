@@ -1,39 +1,11 @@
 import styles from "../Menu/Menu.module.css";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { GiExitDoor } from "react-icons/gi";
-import { FiSearch } from "react-icons/fi";
-import { Link } from "react-router";
 import NebulaWork from "../../assets/nebula_logo_sem_fundo.png";
-import { useEffect, useRef, useState } from "react";
-/*<img src=""/>*/
+import { useAuth } from "../../contexts/useAuth.js";
+
 function Menu() {
-  const [editando, setEditando] = useState(false);
-  const [fechando, setFechando] = useState(false);
-  const [texto, setTexto] = useState("");
-  const buscaRef = useRef(null);
-  const temporizadorFechamento = useRef(null);
-
-  useEffect(() => {
-    if (!editando || fechando) return;
-
-    const fecharAoClicarFora = (event) => {
-      if (!buscaRef.current?.contains(event.target)) {
-        fecharBusca();
-      }
-    };
-
-    document.addEventListener("pointerdown", fecharAoClicarFora);
-    return () => {
-      document.removeEventListener("pointerdown", fecharAoClicarFora);
-    };
-  }, [editando, fechando]);
-
-  useEffect(
-    () => () => {
-      window.clearTimeout(temporizadorFechamento.current);
-    },
-    [],
-  );
+  const { user, logout } = useAuth();
 
   return (
     <header className={styles.container}>
@@ -50,10 +22,20 @@ function Menu() {
         </NavLink>
       </nav>
       <div className={styles.cantoDireito}>
-        <Link to="/login" className={styles.entrar}>
-          <GiExitDoor size={27} />
-          Entrar
-        </Link>
+        {user ? (
+          <>
+            <Link to="/perfil" className={styles.profileLink}>Meu perfil</Link>
+            <button type="button" className={styles.entrar} onClick={logout}>
+              <GiExitDoor size={20} />
+              Sair
+            </button>
+          </>
+        ) : (
+          <Link to="/login" className={styles.entrar}>
+            <GiExitDoor size={20} />
+            Entrar
+          </Link>
+        )}
       </div>
     </header>
   );

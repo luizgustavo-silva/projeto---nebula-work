@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
-import { vagas } from "../../data/vagas.js";
 import styles from "./Home.module.css";
 import { IoMdSearch } from "react-icons/io";
 import { IoLocationOutline } from "react-icons/io5";
 import logo from "../../assets/nebula_logo_sem_fundo.png";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { useAuth } from "../../contexts/useAuth.js";
+
 function Home() {
+  const { user, vagas, vagasSalvas, alternarSalvo } = useAuth();
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [vagaSelecionadaId, setVagaSelecionadaId] = useState(vagas[0]?.id);
   const [searchLocalidades, setSearchLocalidades] = useState("");
@@ -67,22 +70,33 @@ function Home() {
               <section className={styles.listaVagas} aria-label="Lista de vagas">
                 {vagasFiltradas.length > 0 ? (
                   vagasFiltradas.map((vaga) => (
-                    <button
+                    <article
                       className={`${styles.card} ${vaga.id === vagaSelecionada?.id ? styles.cardSelecionado : ""}`}
-                      type="button"
                       key={vaga.id}
-                      onClick={() => setVagaSelecionadaId(vaga.id)}
-                      aria-pressed={vaga.id === vagaSelecionada?.id}
                     >
-                      <span className={styles.cardCabecalho}>
-                        <span className={styles.tipo}>{vaga.tipo}</span>
-                        <span className={styles.publicoAlvo}>Afirmativa para {vaga.publicoAlvo.toLocaleLowerCase("pt-BR")}</span>
-                      </span>
-                      <span className={styles.cardTitulo}>{vaga.nome}</span>
-                      <span className={styles.cardEmpresa}>{vaga.empresa}</span>
-                      <span className={styles.localidade}>{vaga.localidade}</span>
-                      <span className={styles.salario}>{vaga.faixaSalarial}</span>
-                    </button>
+                      <button
+                        className={styles.cardMain}
+                        type="button"
+                        onClick={() => setVagaSelecionadaId(vaga.id)}
+                        aria-pressed={vaga.id === vagaSelecionada?.id}
+                      >
+                        <span className={styles.cardCabecalho}>
+                          <span className={styles.tipo}>{vaga.tipo}</span>
+                          <span className={styles.publicoAlvo}>Afirmativa para {vaga.publicoAlvo.toLocaleLowerCase("pt-BR")}</span>
+                        </span>
+                        <span className={styles.cardTitulo}>{vaga.nome}</span>
+                        <span className={styles.cardEmpresa}>{vaga.empresa}</span>
+                        <span className={styles.localidade}>{vaga.localidade}</span>
+                        <span className={styles.salario}>{vaga.faixaSalarial}</span>
+                      </button>
+                      {user?.role === "candidate" ? (
+                        <button className={styles.saveJobButton} type="button" onClick={() => alternarSalvo(vaga.id)}>
+                          {vagasSalvas.includes(vaga.id) ? "Salva no perfil" : "Salvar vaga"}
+                        </button>
+                      ) : !user ? (
+                        <button className={styles.saveJobButton} type="button" onClick={() => navigate("/login")}>Entrar para salvar</button>
+                      ) : null}
+                    </article>
                   ))
                 ) : (
                   <p className={styles.semResultados}>Nenhuma vaga corresponde a essa busca.</p>

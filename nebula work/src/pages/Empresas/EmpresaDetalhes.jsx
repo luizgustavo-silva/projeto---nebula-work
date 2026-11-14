@@ -1,9 +1,10 @@
 import { Link, useParams } from "react-router";
-import { empresas } from "../../data/empresas";
+import { useAuth } from "../../contexts/useAuth.js";
 import styles from "./Empresas.module.css";
 
 function EmpresaDetalhes() {
   const { empresaId } = useParams();
+  const { empresas } = useAuth();
   const empresa = empresas.find((item) => item.id === Number(empresaId));
 
   if (!empresa) {

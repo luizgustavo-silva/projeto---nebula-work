@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { IoLocationOutline, IoSearch } from "react-icons/io5";
-import { empresas } from "../../data/empresas";
+import { useAuth } from "../../contexts/useAuth.js";
 import styles from "./Empresas.module.css";
 
-const setores = [...new Set(empresas.map((empresa) => empresa.setor))].sort((a, b) => a.localeCompare(b, "pt-BR"));
-
 function Empresas() {
+  const { empresas } = useAuth();
   const [nome, setNome] = useState("");
   const [localidade, setLocalidade] = useState("");
   const [setor, setSetor] = useState("");
+  const setores = [...new Set(empresas.map((empresa) => empresa.setor))].sort((a, b) => a.localeCompare(b, "pt-BR"));
 
   const empresasFiltradas = empresas.filter((empresa) => {
     const nomeBusca = nome.trim().toLocaleLowerCase("pt-BR");
