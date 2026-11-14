@@ -1,0 +1,63 @@
+const catalogoInicial = [
+  ["Universidade Aurora do Cerrado", "Goiânia", "GO", "Programação Web para Iniciantes", "Tecnologia"],
+  ["Universidade Horizonte Azul", "Recife", "PE", "Introdução à Ciência de Dados", "Ciência de dados"],
+  ["Universidade Raízes do Sul", "Porto Alegre", "RS", "Robótica e Automação", "Engenharia"],
+  ["Universidade Brisa Amazônica", "Manaus", "AM", "Biodiversidade e Biotecnologia", "Ciências biológicas"],
+  ["Universidade Prisma Central", "Brasília", "DF", "Fundamentos de Cibersegurança", "Tecnologia"],
+  ["Universidade Vale das Águas", "Florianópolis", "SC", "Matemática Aplicada a Dados", "Matemática"],
+  ["Universidade Sol Nascente", "Natal", "RN", "Energias Renováveis", "Engenharia"],
+  ["Universidade Ipê Roxo", "Campinas", "SP", "Inteligência Artificial Responsável", "Tecnologia"],
+  ["Universidade Maré Serena", "Santos", "SP", "Oceanografia e Conservação Marinha", "Ciências ambientais"],
+  ["Universidade Estrela do Norte", "Belém", "PA", "Geoprocessamento e Cartografia Digital", "Ciências ambientais"],
+  ["Universidade Ponto de Encontro", "Curitiba", "PR", "Desenvolvimento de Aplicativos", "Tecnologia"],
+  ["Universidade Caminhos da Serra", "Belo Horizonte", "MG", "Engenharia de Materiais Sustentáveis", "Engenharia"],
+  ["Universidade Candeia do Leste", "Vitória", "ES", "Química Verde", "Química"],
+  ["Universidade Flor de Mandacaru", "Fortaleza", "CE", "Análise e Visualização de Dados", "Ciência de dados"],
+  ["Universidade Ponte das Estrelas", "Rio de Janeiro", "RJ", "Astronomia para Todas", "Física"],
+  ["Universidade Campo das Nuvens", "Londrina", "PR", "Agricultura de Precisão", "Tecnologia"],
+  ["Universidade Trilha do Sol", "São Luís", "MA", "Sistemas Elétricos e Energia Solar", "Engenharia"],
+  ["Universidade Pedra do Mar", "João Pessoa", "PB", "Biologia Marinha", "Ciências biológicas"],
+  ["Universidade Jardim das Ideias", "São Carlos", "SP", "Introdução à Engenharia de Software", "Tecnologia"],
+  ["Universidade Arco do Pantanal", "Campo Grande", "MS", "Ecologia e Monitoramento Ambiental", "Ciências ambientais"],
+  ["Universidade Vila das Descobertas", "Ribeirão Preto", "SP", "Bioinformática e Genômica", "Ciências biológicas"],
+  ["Universidade Rota das Águas", "Maceió", "AL", "Estatística para Pesquisa", "Matemática"],
+  ["Universidade Lua de Prata", "Teresina", "PI", "Eletrônica e Internet das Coisas", "Engenharia"],
+  ["Universidade Floresta Viva", "Rio Branco", "AC", "Tecnologia para Conservação da Amazônia", "Tecnologia"],
+  ["Universidade Pétala do Oeste", "Cuiabá", "MT", "Introdução à Inteligência Artificial", "Tecnologia"],
+  ["Universidade Horizonte das Gerais", "Ouro Preto", "MG", "Mineração Sustentável", "Engenharia"],
+  ["Universidade Girassol do Vale", "Taubaté", "SP", "UX e Acessibilidade Digital", "Tecnologia"],
+  ["Universidade Ventos do Agreste", "Caruaru", "PE", "Redes e Computação em Nuvem", "Tecnologia"],
+  ["Universidade Lagoa das Garças", "Aracaju", "SE", "Microbiologia Aplicada", "Ciências biológicas"],
+  ["Universidade Mirante das Araucárias", "Joinville", "SC", "Desenho e Impressão 3D", "Engenharia"],
+  ["Universidade Raio de Lua", "Santarém", "PA", "Sensoriamento Remoto", "Ciências ambientais"],
+  ["Universidade Campo das Estações", "Passo Fundo", "RS", "Ciência e Tecnologia de Alimentos", "Ciências biológicas"],
+  ["Universidade Sementes do Amanhã", "Uberlândia", "MG", "Lógica de Programação com Python", "Tecnologia"],
+  ["Universidade Riacho Doce", "Ilhéus", "BA", "Biotecnologia e Agricultura", "Ciências biológicas"],
+  ["Universidade Serra das Borboletas", "Petrópolis", "RJ", "Fundamentos de Mecatrônica", "Engenharia"],
+  ["Universidade Céu de Brigadeiro", "São José dos Campos", "SP", "Introdução à Engenharia Aeroespacial", "Engenharia"],
+  ["Universidade Porto das Ideias", "Macapá", "AP", "Banco de Dados e SQL", "Tecnologia"],
+  ["Universidade Violeta do Planalto", "Palmas", "TO", "Tecnologia e Recursos Hídricos", "Engenharia"],
+  ["Universidade Caminho das Pedras", "Juiz de Fora", "MG", "Cálculo para Aplicações Científicas", "Matemática"],
+  ["Universidade Brilho do Litoral", "Niterói", "RJ", "Ciência de Dados para Saúde", "Ciência de dados"],
+];
+
+const modalidades = ["Online", "Híbrido", "Presencial"];
+const duracoes = ["6 semanas", "8 semanas", "12 semanas", "16 semanas"];
+
+export const universidades = catalogoInicial.map(([nome, cidade, estado], index) => ({
+  id: index + 1,
+  nome,
+  localidade: `${cidade} - ${estado}`,
+}));
+
+export const cursosIniciais = catalogoInicial.map(([universidade, cidade, estado, titulo, area], index) => ({
+  id: index + 1,
+  universidadeId: index + 1,
+  universidade,
+  localidade: `${cidade} - ${estado}`,
+  titulo,
+  area,
+  modalidade: modalidades[index % modalidades.length],
+  duracao: duracoes[index % duracoes.length],
+  descricao: `Curso demonstrativo de ${area.toLocaleLowerCase("pt-BR")} para mulheres interessadas em desenvolver conhecimentos e explorar caminhos de atuação na área.`,
+}));
