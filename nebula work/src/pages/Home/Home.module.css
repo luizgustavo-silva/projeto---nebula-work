@@ -32,6 +32,10 @@
 .logoContainer h2 {
   font-weight: bold;
   font-size: 25px;
+  line-height: 1.3;
+  background: linear-gradient(90deg, #402064, #64359c, #9755e8);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .logoContainer p {
   margin-bottom: 20px;
