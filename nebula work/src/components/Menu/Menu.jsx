@@ -48,9 +48,6 @@ function Menu() {
         <NavLink to="/empresas" className={({ isActive }) => (isActive ? `${styles.navLink} ${styles.navLinkAtivo}` : styles.navLink)}>
           Buscar empresas
         </NavLink>
-        <NavLink to="/blogempresas" className={({ isActive }) => (isActive ? `${styles.navLink} ${styles.navLinkAtivo}` : styles.navLink)}>
-          Para empresas
-        </NavLink>
       </nav>
       <div className={styles.cantoDireito}>
         <Link to="/login" className={styles.entrar}>
