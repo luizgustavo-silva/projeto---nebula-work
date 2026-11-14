@@ -1,24 +1,47 @@
 import styles from "../Menu/Menu.module.css";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { GiExitDoor } from "react-icons/gi";
-import { FiSearch } from "react-icons/fi";
-/*<img src=""/>*/
+import NebulaWork from "../../assets/nebula_logo_sem_fundo.png";
+import { useAuth } from "../../contexts/useAuth.js";
+
 function Menu() {
-    return (
-        <header className={styles.container}>
-            <nav className={styles.containerNav}>
-                <NavLink to="/" className={styles.navLink}>Página inicial</NavLink>
-                <NavLink to="/carreiras" className={styles.navLink}>Cargos e Salários</NavLink>
-                <NavLink to="/empresas" className={styles.navLink}>Buscar empresas</NavLink>
-            </nav>
-            <div className={styles.cantoDireito}>
-            <div className={styles.btnsearch}>
-                <button><FiSearch /> Buscar</button>
-            </div>
-            <button><GiExitDoor />Entrar</button>
-            </div>
-        </header>
-    )
+  const { user, logout } = useAuth();
+
+  return (
+    <header className={styles.container}>
+      <img src={NebulaWork} className={styles.logo} alt="Nebula Work" />
+      <nav className={styles.containerNav}>
+        <NavLink to="/" className={({ isActive }) => (isActive ? `${styles.navLink} ${styles.navLinkAtivo}` : styles.navLink)}>
+          Página inicial
+        </NavLink>
+        <NavLink to="/carreiras" className={({ isActive }) => (isActive ? `${styles.navLink} ${styles.navLinkAtivo}` : styles.navLink)}>
+          Cargos e Salários
+        </NavLink>
+        <NavLink to="/cursos" className={({ isActive }) => (isActive ? `${styles.navLink} ${styles.navLinkAtivo}` : styles.navLink)}>
+          Cursos
+        </NavLink>
+        <NavLink to="/empresas" className={({ isActive }) => (isActive ? `${styles.navLink} ${styles.navLinkAtivo}` : styles.navLink)}>
+          Buscar empresas
+        </NavLink>
+      </nav>
+      <div className={styles.cantoDireito}>
+        {user ? (
+          <>
+            <Link to="/perfil" className={styles.profileLink}>Meu perfil</Link>
+            <button type="button" className={styles.entrar} onClick={logout}>
+              <GiExitDoor size={20} />
+              Sair
+            </button>
+          </>
+        ) : (
+          <Link to="/login" className={styles.entrar}>
+            <GiExitDoor size={20} />
+            Entrar
+          </Link>
+        )}
+      </div>
+    </header>
+  );
 }
 
-export default Menu
+export default Menu;

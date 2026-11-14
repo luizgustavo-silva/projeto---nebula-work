@@ -1,0 +1,220 @@
+.page {
+  display: grid;
+  min-height: calc(100vh - 70px);
+  place-items: center;
+  padding: 36px 18px;
+  background:
+    radial-gradient(ellipse at 12% 10%, #f0e9f8 0, transparent 34%),
+    #fcfbfd;
+}
+
+.loginCard {
+  box-sizing: border-box;
+  width: min(100%, 480px);
+  padding: clamp(22px, 5vw, 38px);
+  border: 1px solid #e6e0ec;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 16px 48px #40206414;
+}
+
+.intro {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.brandLogo {
+  display: block;
+  width: min(100%, 280px);
+  height: 80px;
+  margin: 0 auto 12px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.intro h1 {
+  margin-bottom: 9px;
+  color: #32223f;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.intro > p:last-child {
+  color: #6a6471;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.form {
+  display: grid;
+  gap: 9px;
+}
+
+.form label {
+  margin-top: 5px;
+  color: #402064;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.form input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid #ded5e8;
+  border-radius: 8px;
+  color: #32223f;
+  font: inherit;
+  font-size: 13px;
+}
+
+.form input:focus {
+  border-color: #64359c;
+  outline: 3px solid #64359c1a;
+}
+
+.form input::placeholder {
+  color: #958b9e;
+}
+
+.error {
+  color: #a32e55;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.submitButton {
+  height: 46px;
+  margin-top: 7px;
+  border: 0;
+  border-radius: 9px;
+  background: #64359c;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.submitButton:hover {
+  background: #4f247e;
+  transform: translateY(-1px);
+}
+
+.submitButton:focus-visible,
+.accountButton:focus-visible,
+.homeLink:focus-visible {
+  outline: 2px solid #402064;
+  outline-offset: 3px;
+}
+
+.demoAccounts {
+  display: grid;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.demoAccounts h2 {
+  color: #32223f;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.demoNotice {
+  margin-bottom: 3px;
+  color: #77707e;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.accountButton {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 12px;
+  border: 1px solid #eee8f4;
+  border-radius: 9px;
+  background: #fff;
+  color: #64359c;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition: border-color 180ms ease, background-color 180ms ease;
+}
+
+.accountButton:hover {
+  border-color: #b69aca;
+  background: #fbf9fd;
+}
+
+.accountButton span {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+}
+
+.accountButton strong {
+  color: #402064;
+  font-size: 12px;
+}
+
+.accountButton small {
+  overflow-wrap: anywhere;
+  color: #77707e;
+  font-size: 11px;
+}
+
+.accountButton > small {
+  flex: 0 0 auto;
+  color: #64359c;
+  font-weight: 700;
+}
+
+.homeLink {
+  display: block;
+  width: fit-content;
+  margin: 20px auto 0;
+  color: #64359c;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.homeLink:hover {
+  text-decoration: underline;
+}
+
+.securityNote {
+  margin-top: 17px;
+  color: #8a8292;
+  font-size: 10px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 420px) {
+  .page {
+    padding: 20px 12px;
+  }
+
+  .loginCard {
+    padding: 22px 16px;
+    border-radius: 14px;
+  }
+
+  .intro h1 {
+    font-size: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .submitButton,
+  .accountButton {
+    transition: none;
+  }
+}
