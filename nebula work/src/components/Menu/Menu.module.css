@@ -1,20 +1,27 @@
 .container {
-  height: 70px;
-  display: flex;
+  box-sizing: border-box;
+  min-height: 70px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
+  gap: 24px;
+  padding: 0 24px;
   border-bottom: 1px solid #7472721a;
 }
 .containerNav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 40%;
-  gap: 20px;
+  justify-self: center;
+  gap: clamp(14px, 3vw, 36px);
 }
 .logo {
-  width: 15%;
-  height: auto;
+  width: 180px;
+  height: 48px;
+  flex: 0 0 auto;
+  justify-self: start;
+  object-fit: cover;
+  object-position: center;
 }
 .navLink {
   position: relative;
@@ -47,9 +54,10 @@
 }
 .cantoDireito {
   display: flex;
+  justify-self: end;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
 }
 
 .btnsearch,
@@ -163,6 +171,8 @@
   display: flex;
   gap: 10px;
   text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 .entrar:hover {
   background-color: #9755e8;
@@ -170,10 +180,90 @@
   box-shadow: 0 4px 12px #64359c40;
 }
 
+.profileLink {
+  color: #64359c;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.profileLink:hover {
+  color: #402064;
+  text-decoration: underline;
+}
+
+.profileLink:focus-visible,
+.entrar:focus-visible {
+  outline: 2px solid #402064;
+  outline-offset: 3px;
+}
+
+@media (max-width: 840px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    padding: 8px 16px;
+  }
+
+  .logo {
+    width: clamp(150px, 22vw, 175px);
+    height: 46px;
+  }
+
+  .containerNav {
+    order: 3;
+    flex: 1 0 100%;
+    justify-content: flex-start;
+    gap: 22px;
+    overflow-x: auto;
+    padding: 9px 2px 6px;
+    scrollbar-width: thin;
+  }
+
+  .navLink {
+    flex: 0 0 auto;
+    font-size: 13px;
+  }
+
+  .navLink::after {
+    bottom: -7px;
+  }
+
+  .cantoDireito {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .logo {
+    width: 150px;
+    height: 44px;
+  }
+
+  .entrar {
+    width: 88px;
+    height: 36px;
+    gap: 6px;
+    font-size: 13px;
+  }
+
+  .profileLink {
+    font-size: 12px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .navLink,
   .navLink::after,
   .entrar,
+  .profileLink,
   .campoBusca,
   .buscaWrapper {
     transition: none;

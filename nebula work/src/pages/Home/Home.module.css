@@ -45,8 +45,9 @@
   background-color: #9755e8;
   border-radius: 12px;
   padding: 20px;
-  width: 30%;
-  height: 10px;
+  min-width: 150px;
+  min-height: 44px;
+  box-sizing: border-box;
   text-align: center;
   display: flex;
   align-items: center;
@@ -151,9 +152,11 @@
 }
 
 .containerInputs {
+  box-sizing: border-box;
   border: 1px solid #402064;
   border-radius: 12px;
   width: 80%;
+  max-width: 900px;
   display: flex;
   align-items: center;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -224,6 +227,7 @@
 
 .card {
   display: block;
+  box-sizing: border-box;
   width: 100%;
   padding: 18px;
   border: 1px solid #e6e0ec;
@@ -231,9 +235,7 @@
   background: #fff;
   box-shadow: 0 4px 16px #2c18300a;
   color: inherit;
-  cursor: pointer;
-  font: inherit;
-  text-align: left;
+  cursor: default;
   transition:
     border-color 180ms ease,
     box-shadow 180ms ease,
@@ -245,9 +247,47 @@
   transform: translateY(-1px);
 }
 
-.card:focus-visible {
+.cardMain {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.cardMain:focus-visible {
   outline: 2px solid #64359c;
   outline-offset: 2px;
+}
+
+.saveJobButton {
+  margin-top: 14px;
+  padding: 8px 12px;
+  border: 1px solid #b69aca;
+  border-radius: 8px;
+  background: #fff;
+  color: #64359c;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.saveJobButton:hover {
+  background: #64359c;
+  color: #fff;
+}
+
+.saveJobButton:focus-visible {
+  outline: 2px solid #402064;
+  outline-offset: 3px;
 }
 
 .cardSelecionado {
@@ -381,6 +421,10 @@
     grid-template-columns: 1fr;
   }
 
+  .containerInputs {
+    width: 100%;
+  }
+
   .listaVagas {
     max-height: 440px;
   }
@@ -392,10 +436,45 @@
   }
 }
 
+@media (max-width: 520px) {
+  .page {
+    padding: 24px 14px 40px;
+  }
+
+  .containerInputs {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .campoBusca {
+    width: 100%;
+  }
+
+  .logo {
+    max-width: min(100%, 400px);
+    height: auto;
+    max-height: 300px;
+    margin-top: 15px;
+    margin-bottom: -80px;
+    object-fit: contain;
+  }
+
+  .logoContainer h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .logoContainer p {
+    text-align: center;
+    line-height: 1.5;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .btnLogin2,
   .btnLogin2 svg,
   .card,
+  .saveJobButton,
   .campoBusca,
   .campoBusca svg,
   .carregando::before,
