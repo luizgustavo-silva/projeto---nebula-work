@@ -35,22 +35,6 @@ function Menu() {
     [],
   );
 
-  const fecharBusca = () => {
-    if (fechando) return;
-
-    setFechando(true);
-    temporizadorFechamento.current = window.setTimeout(() => {
-      setEditando(false);
-      setFechando(false);
-    }, 220);
-  };
-
-  const finalizarEdicao = (event) => {
-    if (event.key === "Enter" || event.key === "Escape") {
-      fecharBusca();
-    }
-  };
-
   return (
     <header className={styles.container}>
       <img src={NebulaWork} className={styles.logo} alt="Nebula Work" />
@@ -69,27 +53,6 @@ function Menu() {
         </NavLink>
       </nav>
       <div className={styles.cantoDireito}>
-        <div ref={buscaRef} className={`${styles.buscaWrapper} ${editando ? styles.buscaWrapperAberta : ""}`}>
-          {editando ? (
-            <>
-              <FiSearch className={styles.iconeBuscaCampo} size={18} aria-hidden="true" />
-              <input
-                className={`${styles.campoBusca} ${fechando ? styles.campoBuscaFechando : ""}`}
-                type="search"
-                value={texto}
-                onChange={(event) => setTexto(event.target.value)}
-                onKeyDown={finalizarEdicao}
-                aria-label="Buscar"
-                placeholder="Buscar"
-                autoFocus
-              />
-            </>
-          ) : (
-            <button className={styles.btnsearch} onClick={() => setEditando(true)} type="button">
-              <FiSearch size={23} /> Buscar
-            </button>
-          )}
-        </div>
         <Link to="/login" className={styles.entrar}>
           <GiExitDoor size={27} />
           Entrar
