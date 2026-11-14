@@ -71,7 +71,15 @@ function Login() {
               }}
             >
               <span>
-                <strong>{usuario.role === "admin" ? "Administradora" : usuario.role === "company" ? "Empresa" : "Pessoa candidata"}</strong>
+                <strong>
+                  {usuario.role === "admin"
+                    ? "Administradora"
+                    : usuario.role === "company"
+                      ? "Empresa"
+                      : usuario.role === "university"
+                        ? "Universidade"
+                        : "Pessoa candidata"}
+                </strong>
                 <small>{usuario.email} · senha: {usuario.senha}</small>
               </span>
               <small>Usar conta</small>

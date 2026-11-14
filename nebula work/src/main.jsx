@@ -12,6 +12,7 @@ import EmpresaDetalhes from "./pages/Empresas/EmpresaDetalhes.jsx";
 import Menu from "./components/Menu/Menu.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Profile from "./pages/Profile/Profile.jsx";
+import Cursos from "./pages/cursos/Cursos.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -21,6 +22,7 @@ createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/carreiras" element={<Career />} />
+          <Route path="/cursos" element={<Cursos />} />
           <Route path="/empresas" element={<Empresas />} />
           <Route path="/empresas/:empresaId" element={<EmpresaDetalhes />} />
           <Route path="/login" element={<Login />} />

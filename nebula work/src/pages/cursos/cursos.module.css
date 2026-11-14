@@ -1,0 +1,385 @@
+.page {
+  width: 100%;
+  padding-bottom: 72px;
+  color: #24202b;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 48px 24px 82px;
+  border-radius: 0 0 42px 42px;
+  background: linear-gradient(115deg, #402064 0%, #64359c 58%, #8542d5 100%);
+  color: #fff;
+}
+
+.hero::before,
+.hero::after {
+  position: absolute;
+  border: 1px solid #ffffff20;
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.hero::before {
+  top: -190px;
+  right: 7%;
+  width: 380px;
+  height: 380px;
+}
+
+.hero::after {
+  top: -132px;
+  right: 10%;
+  width: 270px;
+  height: 270px;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: min(100%, 980px);
+  min-height: 150px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin: 0 auto;
+}
+
+.eyebrow,
+.sectionEyebrow {
+  margin-bottom: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.eyebrow {
+  color: #e2d0fa;
+}
+
+.hero h1 {
+  max-width: 650px;
+  margin-bottom: 12px;
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+.heroDescription {
+  max-width: 540px;
+  color: #eee5f8;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.heroMark {
+  display: grid;
+  width: 104px;
+  height: 104px;
+  flex: 0 0 104px;
+  place-items: center;
+  border: 1px solid #ffffff50;
+  border-radius: 32px;
+  background: #ffffff14;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 700;
+  transform: rotate(8deg);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  width: min(100% - 40px, 980px);
+  margin: -35px auto 0;
+}
+
+.listingPanel {
+  padding: clamp(18px, 3vw, 26px);
+  border: 1px solid #eee8f4;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 8px 26px #2c18301a;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.sectionEyebrow {
+  margin-bottom: 8px;
+  color: #8542d5;
+}
+
+.sectionHeading h2 {
+  margin-bottom: 7px;
+  color: #402064;
+  font-size: clamp(20px, 3vw, 26px);
+}
+
+.sectionHeading p:last-child {
+  color: #6a6471;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.resultCount {
+  flex: 0 0 auto;
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: #f0e9f8;
+  color: #542b80;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.searchField {
+  display: grid;
+  gap: 8px;
+  color: #402064;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.searchField input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 46px;
+  padding: 0 13px;
+  border: 1px solid #ded5e8;
+  border-radius: 8px;
+  color: #32223f;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.searchField input:focus {
+  border-color: #64359c;
+  outline: 3px solid #64359c1a;
+}
+
+.demoNotice {
+  margin: 12px 0 20px;
+  color: #77707e;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 17px;
+  border: 1px solid #e6e0ec;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 16px #2c18300a;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.card:hover {
+  border-color: #b69aca;
+  transform: translateY(-2px);
+}
+
+.cardTop,
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cardTop {
+  margin-bottom: 13px;
+}
+
+.audience,
+.area {
+  padding: 5px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.audience {
+  background: #f0e9f8;
+  color: #542b80;
+}
+
+.area {
+  background: #fcebf3;
+  color: #873e64;
+}
+
+.card h3 {
+  margin-bottom: 6px;
+  color: #32223f;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.university {
+  margin-bottom: 9px;
+  color: #64359c;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.description {
+  flex: 1;
+  margin-bottom: 16px;
+  color: #6a6471;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.cardFooter {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-top: 11px;
+  border-top: 1px solid #eee8f4;
+  color: #77707e;
+  font-size: 11px;
+}
+
+.enrollButton,
+.enrolledButton {
+  align-self: flex-start;
+  min-height: 38px;
+  margin-top: 14px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.enrollButton {
+  background: #64359c;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.enrollButton:hover {
+  background: #4f247e;
+  transform: translateY(-1px);
+}
+
+.enrolledButton {
+  background: #f0e9f8;
+  color: #542b80;
+  cursor: default;
+}
+
+.enrollLink {
+  width: fit-content;
+  margin-top: 14px;
+  color: #64359c;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.enrollButton:focus-visible,
+.enrollLink:focus-visible {
+  outline: 2px solid #402064;
+  outline-offset: 3px;
+}
+
+.emptyState {
+  padding: 20px 0;
+  color: #6a6471;
+  font-size: 13px;
+}
+
+.accountNote {
+  margin-top: 18px;
+  color: #6a6471;
+  font-size: 12px;
+  text-align: center;
+}
+
+.accountNote a {
+  color: #64359c;
+  font-weight: 700;
+}
+
+.accountNote a:focus-visible {
+  outline: 2px solid #402064;
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 36px 20px 66px;
+    border-radius: 0 0 28px 28px;
+  }
+
+  .heroMark {
+    width: 76px;
+    height: 76px;
+    flex-basis: 76px;
+    border-radius: 24px;
+    font-size: 15px;
+  }
+
+  .content {
+    width: min(100% - 28px, 980px);
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .heroContent {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .heroMark {
+    width: 60px;
+    height: 60px;
+    flex-basis: 60px;
+    border-radius: 18px;
+    font-size: 12px;
+  }
+
+  .sectionHeading {
+    align-items: flex-start;
+  }
+
+  .resultCount {
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+
+  .cardTop {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .enrollButton {
+    transition: none;
+  }
+}

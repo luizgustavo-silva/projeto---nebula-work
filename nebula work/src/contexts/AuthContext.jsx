@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { empresas as empresasIniciais } from "../data/empresas.js";
 import { usuariosDemo } from "../data/demoAccounts.js";
+import { cursosIniciais, universidades } from "../data/cursos.js";
 import { vagas } from "../data/vagas.js";
 import { AuthContext } from "./AuthContextStore.js";
 
@@ -28,6 +29,7 @@ function dadosPublicosUsuario(usuario) {
     nome: usuario.nome,
     role: usuario.role,
     ...(usuario.companyId ? { companyId: usuario.companyId } : {}),
+    ...(usuario.universityId ? { universityId: usuario.universityId } : {}),
   };
 }
 
@@ -40,6 +42,8 @@ export function AuthProvider({ children }) {
   const [vagasDisponiveis, setVagasDisponiveis] = useState(() => lerArmazenamento("nebula-jobs", vagas));
   const [salvasPorUsuario, setSalvasPorUsuario] = useState(() => lerArmazenamento("nebula-saved-jobs", {}));
   const [empresas, setEmpresas] = useState(() => lerArmazenamento("nebula-companies", empresasIniciais));
+  const [cursos, setCursos] = useState(() => lerArmazenamento("nebula-courses", cursosIniciais));
+  const [inscricoesPorUsuario, setInscricoesPorUsuario] = useState(() => lerArmazenamento("nebula-course-enrollments", {}));
 
   useEffect(() => {
     if (user) window.localStorage.setItem("nebula-session", JSON.stringify({ email: user.email }));
@@ -57,6 +61,14 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     window.localStorage.setItem("nebula-companies", JSON.stringify(empresas));
   }, [empresas]);
+
+  useEffect(() => {
+    window.localStorage.setItem("nebula-courses", JSON.stringify(cursos));
+  }, [cursos]);
+
+  useEffect(() => {
+    window.localStorage.setItem("nebula-course-enrollments", JSON.stringify(inscricoesPorUsuario));
+  }, [inscricoesPorUsuario]);
 
   function login(email, senha) {
     const usuario = usuariosDemo.find((item) => item.email === email.trim().toLowerCase() && item.senha === senha);
@@ -95,7 +107,59 @@ export function AuthProvider({ children }) {
     setEmpresas((atuais) => atuais.map((empresa) => (empresa.id === id ? { ...empresa, ...alteracoes } : empresa)));
   }
 
+  function adicionarCurso(curso) {
+    exigirPermissao(user?.role === "university", "Somente contas de universidade podem adicionar cursos.");
+    const universidade = universidades.find((item) => item.id === user.universityId);
+    exigirPermissao(Boolean(universidade), "Não foi possível localizar a universidade desta conta.");
+    setCursos((atuais) => [
+      ...atuais,
+      {
+        id: Math.max(0, ...atuais.map((item) => item.id)) + 1,
+        universidadeId: user.universityId,
+        universidade: universidade.nome,
+        localidade: universidade.localidade,
+        titulo: curso.titulo.trim(),
+        area: curso.area.trim(),
+        modalidade: curso.modalidade.trim(),
+        duracao: curso.duracao.trim(),
+        descricao: curso.descricao.trim(),
+      },
+    ]);
+  }
+
+  function removerCurso(id) {
+    exigirPermissao(user?.role === "university", "Somente contas de universidade podem remover cursos.");
+    exigirPermissao(
+      cursos.some((curso) => curso.id === id && curso.universidadeId === user.universityId),
+      "Sua conta não pode remover este curso.",
+    );
+    setCursos((atuais) => atuais.filter((curso) => curso.id !== id));
+    setInscricoesPorUsuario((atuais) => Object.fromEntries(
+      Object.entries(atuais).map(([email, ids]) => [email, ids.filter((cursoId) => cursoId !== id)]),
+    ));
+  }
+
+  function inscreverEmCurso(id) {
+    exigirPermissao(user?.role === "candidate", "Somente contas de pessoa candidata podem se inscrever em cursos.");
+    exigirPermissao(cursos.some((curso) => curso.id === id), "Este curso não está mais disponível.");
+    setInscricoesPorUsuario((atuais) => {
+      const ids = atuais[user.email] ?? [];
+      return ids.includes(id) ? atuais : { ...atuais, [user.email]: [...ids, id] };
+    });
+  }
+
+  function cancelarInscricaoCurso(id) {
+    exigirPermissao(user?.role === "candidate", "Somente contas de pessoa candidata podem cancelar inscrições.");
+    setInscricoesPorUsuario((atuais) => {
+      const ids = atuais[user.email] ?? [];
+      return { ...atuais, [user.email]: ids.filter((cursoId) => cursoId !== id) };
+    });
+  }
+
   const vagasSalvas = user?.role === "candidate" ? (salvasPorUsuario[user.email] ?? []) : [];
+  const cursosInscritos = user?.role === "candidate"
+    ? cursos.filter((curso) => (inscricoesPorUsuario[user.email] ?? []).includes(curso.id))
+    : [];
   const valor = {
       user,
       login,
@@ -107,6 +171,12 @@ export function AuthProvider({ children }) {
       removerVaga,
       empresas,
       atualizarEmpresa,
+      cursos,
+      adicionarCurso,
+      removerCurso,
+      cursosInscritos,
+      inscreverEmCurso,
+      cancelarInscricaoCurso,
   };
 
   return <AuthContext.Provider value={valor}>{children}</AuthContext.Provider>;

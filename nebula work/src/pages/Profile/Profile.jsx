@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { useAuth } from "../../contexts/useAuth.js";
+import { universidades } from "../../data/cursos.js";
 import styles from "./Profile.module.css";
 
 const initialJob = {
@@ -12,11 +13,36 @@ const initialJob = {
   descricao: "",
 };
 
+const initialCourse = {
+  titulo: "",
+  area: "",
+  modalidade: "Online",
+  duracao: "",
+  descricao: "",
+};
+
 function Profile() {
-  const { user, vagas, vagasSalvas, alternarSalvo, adicionarVaga, removerVaga, empresas, atualizarEmpresa } = useAuth();
+  const {
+    user,
+    vagas,
+    vagasSalvas,
+    alternarSalvo,
+    adicionarVaga,
+    removerVaga,
+    empresas,
+    atualizarEmpresa,
+    cursos,
+    adicionarCurso,
+    removerCurso,
+    cursosInscritos,
+    cancelarInscricaoCurso,
+  } = useAuth();
   const [vagaForm, setVagaForm] = useState(initialJob);
+  const [cursoForm, setCursoForm] = useState(initialCourse);
   const [mensagem, setMensagem] = useState("");
   const empresa = user?.role === "company" ? empresas.find((item) => item.id === user.companyId) : null;
+  const universidade = user?.role === "university" ? universidades.find((item) => item.id === user.universityId) : null;
+  const cursosDaUniversidade = cursos.filter((curso) => curso.universidadeId === user?.universityId);
   const [rascunhoEmpresa, setRascunhoEmpresa] = useState(null);
   const empresaForm = rascunhoEmpresa ?? empresa;
 
@@ -39,6 +65,18 @@ function Profile() {
     setMensagem("A oportunidade foi adicionada à página inicial.");
   }
 
+  function enviarCurso(event) {
+    event.preventDefault();
+    if (![cursoForm.titulo, cursoForm.area, cursoForm.modalidade, cursoForm.duracao, cursoForm.descricao].every((valor) => valor.trim())) {
+      setMensagem("Preencha todos os campos do curso.");
+      return;
+    }
+
+    adicionarCurso(cursoForm);
+    setCursoForm(initialCourse);
+    setMensagem("O curso foi publicado na aba Cursos.");
+  }
+
   function salvarEmpresa(event) {
     event.preventDefault();
     atualizarEmpresa(empresa.id, empresaForm);
@@ -52,39 +90,77 @@ function Profile() {
         <h1>Olá, {user.nome}</h1>
         <p>
           {user.role === "admin" && "Gerencie as oportunidades exibidas na página inicial."}
-          {user.role === "candidate" && "Aqui ficam as oportunidades que você salvou."}
+          {user.role === "candidate" && "Acompanhe suas vagas salvas e os cursos em que se inscreveu."}
           {user.role === "company" && "Atualize as informações públicas da sua empresa."}
+          {user.role === "university" && "Publique e gerencie cursos para mulheres em STEM."}
         </p>
       </header>
 
       {mensagem && <p className={styles.successMessage} role="status">{mensagem}</p>}
 
       {user.role === "candidate" && (
-        <section className={styles.panel}>
-          <div className={styles.panelHeading}>
-            <div>
-              <h2>Vagas salvas</h2>
-              <p>Suas oportunidades ficam guardadas nesta conta neste navegador.</p>
+        <>
+          <section className={styles.panel}>
+            <div className={styles.panelHeading}>
+              <div>
+                <h2>Vagas salvas</h2>
+                <p>Suas oportunidades ficam guardadas nesta conta neste navegador.</p>
+              </div>
+              <span className={styles.count}>{vagasSalvas.length}</span>
             </div>
-            <span className={styles.count}>{vagasSalvas.length}</span>
-          </div>
-          {vagasSalvas.length ? (
-            <div className={styles.savedList}>
-              {vagas.filter((vaga) => vagasSalvas.includes(vaga.id)).map((vaga) => (
-                <article className={styles.savedCard} key={vaga.id}>
-                  <div>
-                    <h3>{vaga.nome}</h3>
-                    <p>{vaga.empresa} · {vaga.localidade}</p>
-                    <span>{vaga.faixaSalarial}</span>
-                  </div>
-                  <button type="button" className={styles.secondaryButton} onClick={() => alternarSalvo(vaga.id)}>Remover</button>
-                </article>
-              ))}
+            {vagasSalvas.length ? (
+              <div className={styles.savedList}>
+                {vagas.filter((vaga) => vagasSalvas.includes(vaga.id)).map((vaga) => (
+                  <article className={styles.savedCard} key={vaga.id}>
+                    <div>
+                      <h3>{vaga.nome}</h3>
+                      <p>{vaga.empresa} · {vaga.localidade}</p>
+                      <span>{vaga.faixaSalarial}</span>
+                    </div>
+                    <button type="button" className={styles.secondaryButton} onClick={() => alternarSalvo(vaga.id)}>Remover</button>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <p className={styles.emptyState}>Você ainda não salvou vagas. Explore a <Link to="/">página inicial</Link>.</p>
+            )}
+          </section>
+
+          <section className={styles.panel}>
+            <div className={styles.panelHeading}>
+              <div>
+                <h2>Meus cursos</h2>
+                <p>Veja os cursos em que você se inscreveu.</p>
+              </div>
+              <span className={styles.count}>{cursosInscritos.length}</span>
             </div>
-          ) : (
-            <p className={styles.emptyState}>Você ainda não salvou vagas. Explore a <Link to="/">página inicial</Link>.</p>
-          )}
-        </section>
+            {cursosInscritos.length ? (
+              <div className={styles.savedList}>
+                {cursosInscritos.map((curso) => (
+                  <article className={styles.savedCard} key={curso.id}>
+                    <div>
+                      <h3>{curso.titulo}</h3>
+                      <p>{curso.universidade} · {curso.area}</p>
+                      <span>{curso.modalidade} · {curso.duracao}</span>
+                    </div>
+                    <button
+                      type="button"
+                      className={styles.secondaryButton}
+                      onClick={() => {
+                        cancelarInscricaoCurso(curso.id);
+                        setMensagem("A inscrição no curso foi cancelada.");
+                      }}
+                    >
+                      Cancelar inscrição
+                    </button>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <p className={styles.emptyState}>Você ainda não está inscrita em cursos. Explore a <Link to="/cursos">aba Cursos</Link>.</p>
+            )}
+          </section>
+        </>
       )}
 
       {user.role === "admin" && (
@@ -177,6 +253,66 @@ function Profile() {
           </form>
           <p className={styles.panelFootnote}>As configurações desta conta editam somente {empresa.nome}.</p>
         </section>
+      )}
+
+      {user.role === "university" && universidade && (
+        <div className={styles.adminLayout}>
+          <section className={styles.panel}>
+            <h2>Publicar curso</h2>
+            <p className={styles.panelDescription}>Os cursos publicados ficam disponíveis na aba Cursos.</p>
+            <form className={styles.form} onSubmit={enviarCurso}>
+              <label>
+                Nome do curso
+                <input required value={cursoForm.titulo} onChange={(event) => setCursoForm({ ...cursoForm, titulo: event.target.value })} />
+              </label>
+              <label>
+                Área STEM
+                <input required value={cursoForm.area} onChange={(event) => setCursoForm({ ...cursoForm, area: event.target.value })} placeholder="Ex.: Tecnologia" />
+              </label>
+              <label>
+                Modalidade
+                <select required value={cursoForm.modalidade} onChange={(event) => setCursoForm({ ...cursoForm, modalidade: event.target.value })}>
+                  <option>Online</option>
+                  <option>Híbrido</option>
+                  <option>Presencial</option>
+                </select>
+              </label>
+              <label>
+                Duração
+                <input required value={cursoForm.duracao} onChange={(event) => setCursoForm({ ...cursoForm, duracao: event.target.value })} placeholder="Ex.: 8 semanas" />
+              </label>
+              <label className={styles.fullField}>
+                Descrição
+                <textarea required rows="3" value={cursoForm.descricao} onChange={(event) => setCursoForm({ ...cursoForm, descricao: event.target.value })} />
+              </label>
+              <button type="submit" className={styles.primaryButton}>Publicar curso</button>
+            </form>
+            <p className={styles.panelFootnote}>Esta conta gerencia somente cursos de {universidade.nome}.</p>
+          </section>
+
+          <section className={styles.panel}>
+            <div className={styles.panelHeading}>
+              <div>
+                <h2>Meus cursos</h2>
+                <p>Remova cursos que não estão mais disponíveis.</p>
+              </div>
+              <span className={styles.count}>{cursosDaUniversidade.length}</span>
+            </div>
+            <div className={styles.manageList}>
+              {cursosDaUniversidade.length ? cursosDaUniversidade.map((curso) => (
+                <article className={styles.manageItem} key={curso.id}>
+                  <div>
+                    <strong>{curso.titulo}</strong>
+                    <span>{curso.area} · {curso.modalidade} · {curso.duracao}</span>
+                  </div>
+                  <button type="button" className={styles.removeButton} onClick={() => removerCurso(curso.id)}>Remover</button>
+                </article>
+              )) : (
+                <p className={styles.emptyState}>Você ainda não publicou cursos.</p>
+              )}
+            </div>
+          </section>
+        </div>
       )}
     </main>
   );
