@@ -15,11 +15,7 @@ function Empresas() {
     const nomeBusca = nome.trim().toLocaleLowerCase("pt-BR");
     const localBusca = localidade.trim().toLocaleLowerCase("pt-BR");
 
-    return (
-      empresa.nome.toLocaleLowerCase("pt-BR").includes(nomeBusca) &&
-      empresa.localidade.toLocaleLowerCase("pt-BR").includes(localBusca) &&
-      (!setor || empresa.setor === setor)
-    );
+    return empresa.nome.toLocaleLowerCase("pt-BR").includes(nomeBusca) && empresa.localidade.toLocaleLowerCase("pt-BR").includes(localBusca) && (!setor || empresa.setor === setor);
   });
 
   return (
@@ -27,8 +23,8 @@ function Empresas() {
       <header className={styles.hero}>
         <div className={styles.heroContent}>
           <p className={styles.eyebrow}>EMPRESAS QUE ABREM CAMINHOS</p>
-          <h1>Pesquise empresas</h1>
-          <p>Conheça empresas de ciência, tecnologia e engenharia com iniciativas para mulheres.</p>
+          <h1>Pesquise empresas, bolsas e intercâmbios</h1>
+          <p>Conheça empresas de ciência, tecnologia e engenharia com iniciativas para jovens.</p>
         </div>
       </header>
 
@@ -58,11 +54,15 @@ function Empresas() {
         </div>
 
         <div className={styles.filters}>
-          <label className={styles.filterLabel} htmlFor="filtro-setor">Setor</label>
+          <label className={styles.filterLabel} htmlFor="filtro-setor">
+            Setor
+          </label>
           <select id="filtro-setor" value={setor} onChange={(event) => setSetor(event.target.value)}>
             <option value="">Todos os setores</option>
             {setores.map((nomeSetor) => (
-              <option key={nomeSetor} value={nomeSetor}>{nomeSetor}</option>
+              <option key={nomeSetor} value={nomeSetor}>
+                {nomeSetor}
+              </option>
             ))}
           </select>
         </div>
@@ -75,15 +75,27 @@ function Empresas() {
           <div className={styles.companyList}>
             {empresasFiltradas.map((empresa) => (
               <Link className={styles.companyCard} to={`/empresas/${empresa.id}`} key={empresa.id}>
-                <span className={styles.companyMark} aria-hidden="true">{empresa.nome.slice(0, 1)}</span>
+                <span className={styles.companyMark} aria-hidden="true">
+                  {empresa.nome.slice(0, 1)}
+                </span>
                 <span className={styles.companyInfo}>
-                  <span className={styles.companyTitle}>{empresa.nome} <span className={styles.rating}>★ {empresa.avaliacao}</span></span>
+                  <span className={styles.companyTitle}>
+                    {empresa.nome} <span className={styles.rating}>★ {empresa.avaliacao}</span>
+                  </span>
                   <span className={styles.companyDescription}>{empresa.descricao}</span>
-                  <span className={styles.companyLocation}>{empresa.localidade} · {empresa.setor}</span>
+                  <span className={styles.companyLocation}>
+                    {empresa.localidade} · {empresa.setor}
+                  </span>
                   <span className={styles.metrics}>
-                    <span><strong>{empresa.avaliacoes.toLocaleString("pt-BR")}</strong> avaliações</span>
-                    <span><strong>{empresa.salariosInformados.toLocaleString("pt-BR")}</strong> salários</span>
-                    <span><strong>{empresa.entrevistas.toLocaleString("pt-BR")}</strong> entrevistas</span>
+                    <span>
+                      <strong>{empresa.avaliacoes.toLocaleString("pt-BR")}</strong> avaliações
+                    </span>
+                    <span>
+                      <strong>{empresa.salariosInformados.toLocaleString("pt-BR")}</strong> salários
+                    </span>
+                    <span>
+                      <strong>{empresa.entrevistas.toLocaleString("pt-BR")}</strong> entrevistas
+                    </span>
                   </span>
                 </span>
                 <span className={styles.openings}>

@@ -61,10 +61,10 @@ function EmpresaDetalhes() {
         </section>
 
         <section className={styles.detailSection}>
-          <p className={styles.detailEyebrow}>MULHERES EM STEM</p>
+          <p className={styles.detailEyebrow}>JOVENS EM STEM</p>
           <h2>Um ambiente para crescer e fazer a diferença</h2>
           <p>{empresa.iniciativa}</p>
-          <div className={styles.initiativeTag}>Oportunidades destinadas a mulheres</div>
+          <div className={styles.initiativeTag}>Oportunidades destinadas a jovens</div>
         </section>
 
         <section className={styles.detailSection}>

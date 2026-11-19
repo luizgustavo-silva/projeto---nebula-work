@@ -15,7 +15,7 @@ function Menu() {
           Página inicial
         </NavLink>
         <NavLink to="/carreiras" className={({ isActive }) => (isActive ? `${styles.navLink} ${styles.navLinkAtivo}` : styles.navLink)}>
-          Cargos e Salários
+          Bolsas e remunerações
         </NavLink>
         <NavLink to="/cursos" className={({ isActive }) => (isActive ? `${styles.navLink} ${styles.navLinkAtivo}` : styles.navLink)}>
           Cursos

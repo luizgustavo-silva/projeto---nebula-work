@@ -1,4 +1,4 @@
-// Empresas e indicadores ficticios para demonstracao, com iniciativas para mulheres.
+// Empresas e indicadores ficticios para demonstracao, com iniciativas para jovens.
 const empresasBase = [
   {
     nome: "Ametista Automacao",
@@ -6,7 +6,7 @@ const empresasBase = [
     localidade: "Campinas - SP",
     descricao: "Desenvolve solucoes de automacao industrial e sistemas inteligentes para linhas de producao.",
     especialidade: "Robotica e controle industrial",
-    iniciativa: "Programa de mentoria tecnica e trilha de lideranca para mulheres em engenharia.",
+    iniciativa: "Programa de mentoria tecnica e trilha de lideranca para jovens em engenharia.",
   },
   {
     nome: "Astera Biociencias",
@@ -14,7 +14,7 @@ const empresasBase = [
     localidade: "Ribeirao Preto - SP",
     descricao: "Pesquisa solucoes biotecnologicas para saude, agricultura e preservacao ambiental.",
     especialidade: "Biologia molecular e pesquisa aplicada",
-    iniciativa: "Bolsa de pesquisa e acompanhamento de carreira para cientistas mulheres.",
+    iniciativa: "Bolsa de pesquisa e acompanhamento de carreira para cientistas jovens.",
   },
   {
     nome: "Aurora Sistemas",
@@ -22,7 +22,7 @@ const empresasBase = [
     localidade: "Remoto - Brasil",
     descricao: "Desenvolve plataformas digitais acessiveis para simplificar servicos e operacoes.",
     especialidade: "Engenharia de software e acessibilidade",
-    iniciativa: "Comunidade interna de mulheres em tecnologia com encontros e apoio entre pares.",
+    iniciativa: "Comunidade interna de jovens em tecnologia com encontros e apoio entre pares.",
   },
   {
     nome: "Bambu Engenharia",
@@ -38,7 +38,7 @@ const empresasBase = [
     localidade: "Remoto - Brasil",
     descricao: "Transforma dados em produtos analiticos para organizacoes de diferentes setores.",
     especialidade: "Ciencia de dados e inteligencia artificial",
-    iniciativa: "Programa de retorno ao trabalho para mulheres em carreiras de dados.",
+    iniciativa: "Programa de retorno ao trabalho para jovens em carreiras de dados.",
   },
   {
     nome: "Candeia Quimica",
@@ -46,7 +46,7 @@ const empresasBase = [
     localidade: "Sao Paulo - SP",
     descricao: "Desenvolve insumos e processos quimicos com foco em seguranca e menor impacto ambiental.",
     especialidade: "Quimica verde e controle de qualidade",
-    iniciativa: "Capacitacao e progressao profissional para mulheres em laboratorio e producao.",
+    iniciativa: "Capacitacao e progressao profissional para jovens em laboratorio e producao.",
   },
   {
     nome: "Cedro Cibernetica",
@@ -54,7 +54,7 @@ const empresasBase = [
     localidade: "Brasilia - DF",
     descricao: "Ajuda empresas a proteger sistemas, dados e infraestrutura digital.",
     especialidade: "Ciberseguranca e privacidade",
-    iniciativa: "Trilha de entrada em seguranca digital exclusiva para mulheres.",
+    iniciativa: "Trilha de entrada em seguranca digital exclusiva para jovens.",
   },
   {
     nome: "Ciclo Engenharia",
@@ -70,7 +70,7 @@ const empresasBase = [
     localidade: "Remoto - Brasil",
     descricao: "Oferece infraestrutura e ferramentas digitais para operacoes em nuvem.",
     especialidade: "Computacao em nuvem e plataformas",
-    iniciativa: "Programa de certificacao em nuvem com bolsas para mulheres.",
+    iniciativa: "Programa de certificacao em nuvem com bolsas para jovens.",
   },
   {
     nome: "Constela Pesquisa",
@@ -94,7 +94,7 @@ const empresasBase = [
     localidade: "Recife - PE",
     descricao: "Cria produtos digitais e ferramentas interativas para educacao e pesquisa.",
     especialidade: "UX, desenvolvimento e tecnologia educacional",
-    iniciativa: "Grupos de apoio e crescimento para mulheres em design e desenvolvimento.",
+    iniciativa: "Grupos de apoio e crescimento para jovens em design e desenvolvimento.",
   },
   {
     nome: "Eixo Mobilidade",
@@ -110,7 +110,7 @@ const empresasBase = [
     localidade: "Porto Alegre - RS",
     descricao: "Aplica analise genomica para apoiar pesquisas e solucoes personalizadas em saude.",
     especialidade: "Genetica e bioinformatica",
-    iniciativa: "Bolsas e supervisao para mulheres em bioinformatica e genetica.",
+    iniciativa: "Bolsas e supervisao para jovens em bioinformatica e genetica.",
   },
   {
     nome: "Estacao Materia",
@@ -126,7 +126,7 @@ const empresasBase = [
     localidade: "Manaus - AM",
     descricao: "Projeta componentes eletronicos e sistemas embarcados para dispositivos conectados.",
     especialidade: "Eletronica e sistemas embarcados",
-    iniciativa: "Estagios e formacao pratica em hardware destinados a mulheres.",
+    iniciativa: "Estagios e formacao pratica em hardware destinados a jovens.",
   },
   {
     nome: "Farol Geociencias",
@@ -142,7 +142,7 @@ const empresasBase = [
     localidade: "Goiania - GO",
     descricao: "Desenvolve processos biologicos para agricultura resiliente e producao sustentavel.",
     especialidade: "Biotecnologia agricola",
-    iniciativa: "Formacao cientifica e mentoria para mulheres em biotecnologia.",
+    iniciativa: "Formacao cientifica e mentoria para jovens em biotecnologia.",
   },
   {
     nome: "Forma Estruturas",
@@ -150,7 +150,7 @@ const empresasBase = [
     localidade: "Sao Paulo - SP",
     descricao: "Projeta estruturas seguras para edificacoes, equipamentos e infraestrutura urbana.",
     especialidade: "Engenharia estrutural",
-    iniciativa: "Acompanhamento de carreira para mulheres em projetos e canteiros de obra.",
+    iniciativa: "Acompanhamento de carreira para jovens em projetos e canteiros de obra.",
   },
   {
     nome: "Giro Robotica",
@@ -166,7 +166,7 @@ const empresasBase = [
     localidade: "Rio de Janeiro - RJ",
     descricao: "Pesquisa compostos e processos para o desenvolvimento de produtos biofarmaceuticos.",
     especialidade: "Farmacia, biologia e desenvolvimento clinico",
-    iniciativa: "Apoio a cientistas mulheres em pesquisa e desenvolvimento de novos produtos.",
+    iniciativa: "Apoio a cientistas jovens em pesquisa e desenvolvimento de novos produtos.",
   },
   {
     nome: "Imani Inteligencia",
@@ -174,7 +174,7 @@ const empresasBase = [
     localidade: "Remoto - Brasil",
     descricao: "Cria ferramentas de inteligencia artificial para apoiar decisoes e automatizar tarefas.",
     especialidade: "Aprendizado de maquina e IA responsavel",
-    iniciativa: "Programa de formacao e lideranca para mulheres em inteligencia artificial.",
+    iniciativa: "Programa de formacao e lideranca para jovens em inteligencia artificial.",
   },
   {
     nome: "Jandaia Energia",
@@ -182,7 +182,7 @@ const empresasBase = [
     localidade: "Natal - RN",
     descricao: "Opera projetos de energia eolica e pesquisa novas formas de armazenamento.",
     especialidade: "Energia eolica e sistemas eletricos",
-    iniciativa: "Capacitacao tecnica de mulheres para atuacao em operacoes e engenharia.",
+    iniciativa: "Capacitacao tecnica de jovens para atuacao em operacoes e engenharia.",
   },
   {
     nome: "Jatoba Arquitetura Digital",
@@ -222,7 +222,7 @@ const empresasBase = [
     localidade: "Campinas - SP",
     descricao: "Desenvolve infraestrutura e solucoes de comunicacao para redes conectadas.",
     especialidade: "Telecomunicacoes e redes",
-    iniciativa: "Programa de mentoria para mulheres em redes e engenharia de telecomunicacoes.",
+    iniciativa: "Programa de mentoria para jovens em redes e engenharia de telecomunicacoes.",
   },
   {
     nome: "Orvalho Alimentos Cientificos",
@@ -230,7 +230,7 @@ const empresasBase = [
     localidade: "Curitiba - PR",
     descricao: "Pesquisa ingredientes e processos para alimentos seguros e de menor impacto.",
     especialidade: "Ciencia e engenharia de alimentos",
-    iniciativa: "Desenvolvimento profissional de mulheres em laboratorio e operacoes.",
+    iniciativa: "Desenvolvimento profissional de jovens em laboratorio e operacoes.",
   },
   {
     nome: "Papiro Dados",
@@ -238,7 +238,7 @@ const empresasBase = [
     localidade: "Remoto - Brasil",
     descricao: "Construi produtos de dados e ferramentas de analise para organizacoes.",
     especialidade: "Engenharia de dados e visualizacao",
-    iniciativa: "Bolsas de especializacao e rede de mentoria para mulheres em dados.",
+    iniciativa: "Bolsas de especializacao e rede de mentoria para jovens em dados.",
   },
   {
     nome: "Ponte Quimica",
@@ -246,7 +246,7 @@ const empresasBase = [
     localidade: "Sao Paulo - SP",
     descricao: "Realiza pesquisa e controle de processos para materiais e produtos quimicos.",
     especialidade: "Quimica industrial e analitica",
-    iniciativa: "Plano de desenvolvimento e lideranca para profissionais mulheres de laboratorio.",
+    iniciativa: "Plano de desenvolvimento e lideranca para profissionais jovens de laboratorio.",
   },
   {
     nome: "Raiz Agrotecnologia",
@@ -254,7 +254,7 @@ const empresasBase = [
     localidade: "Londrina - PR",
     descricao: "Combina sensores, dados e ciencia agraria para apoiar uma agricultura eficiente.",
     especialidade: "Agrotecnologia e sensoriamento",
-    iniciativa: "Formacao de mulheres em tecnologia aplicada ao agronegocio.",
+    iniciativa: "Formacao de jovens em tecnologia aplicada ao agronegocio.",
   },
   {
     nome: "Ritmo Sistemas Medicos",
@@ -262,7 +262,7 @@ const empresasBase = [
     localidade: "Belo Horizonte - MG",
     descricao: "Desenvolve equipamentos e softwares para monitoramento e cuidado em saude.",
     especialidade: "Engenharia biomedica",
-    iniciativa: "Mentoria e incentivo a mulheres em engenharia e tecnologia para saude.",
+    iniciativa: "Mentoria e incentivo a jovens em engenharia e tecnologia para saude.",
   },
   {
     nome: "Sabiá Computacao",
@@ -278,7 +278,7 @@ const empresasBase = [
     localidade: "Brasilia - DF",
     descricao: "Analisa dados climaticos e desenvolve solucoes para adaptacao e resiliencia.",
     especialidade: "Climatologia e modelagem ambiental",
-    iniciativa: "Apoio a cientistas mulheres em pesquisa climatica e comunicacao cientifica.",
+    iniciativa: "Apoio a cientistas jovens em pesquisa climatica e comunicacao cientifica.",
   },
   {
     nome: "Solsticio Engenharia",
@@ -294,7 +294,7 @@ const empresasBase = [
     localidade: "Sao Carlos - SP",
     descricao: "Pesquisa materiais avancados e processos de fabricacao de menor impacto.",
     especialidade: "Ciencia de materiais e nanotecnologia",
-    iniciativa: "Bolsas de pesquisa e mentoria para mulheres em ciencia dos materiais.",
+    iniciativa: "Bolsas de pesquisa e mentoria para jovens em ciencia dos materiais.",
   },
   {
     nome: "Uirapuru Bioinformatica",
@@ -302,7 +302,7 @@ const empresasBase = [
     localidade: "Remoto - Brasil",
     descricao: "Desenvolve analises computacionais para pesquisas biologicas e geneticas.",
     especialidade: "Bioinformatica e genomica",
-    iniciativa: "Trilha de entrada e acompanhamento para mulheres em bioinformatica.",
+    iniciativa: "Trilha de entrada e acompanhamento para jovens em bioinformatica.",
   },
   {
     nome: "Vento Norte Engenharia",
@@ -310,7 +310,7 @@ const empresasBase = [
     localidade: "Sao Luis - MA",
     descricao: "Planeja e acompanha projetos de energia renovavel e infraestrutura eletrica.",
     especialidade: "Energia eolica e engenharia eletrica",
-    iniciativa: "Formacao em campo e oportunidades de lideranca para mulheres.",
+    iniciativa: "Formacao em campo e oportunidades de lideranca para jovens.",
   },
   {
     nome: "Violeta Laboratorios",
@@ -318,14 +318,14 @@ const empresasBase = [
     localidade: "Porto Alegre - RS",
     descricao: "Oferece pesquisa e servicos laboratoriais para estudos de biologia e saude.",
     especialidade: "Biologia celular e diagnostico laboratorial",
-    iniciativa: "Politicas de desenvolvimento e promocao de mulheres cientistas.",
+    iniciativa: "Politicas de desenvolvimento e promocao de jovens cientistas.",
   },
 ];
 
 export const empresas = empresasBase.map((empresa, index) => ({
   ...empresa,
   id: index + 1,
-  publicoAlvo: "Mulheres",
+  publicoAlvo: "Jovens",
   avaliacao: (4.1 + ((index * 3) % 9) / 10).toFixed(1),
   avaliacoes: 48 + index * 17,
   salariosInformados: 22 + index * 5,

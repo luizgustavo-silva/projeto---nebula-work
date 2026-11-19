@@ -93,7 +93,7 @@ export function AuthProvider({ children }) {
 
   function adicionarVaga(vaga) {
     exigirPermissao(user?.role === "admin", "Somente a conta administradora pode adicionar vagas.");
-    setVagasDisponiveis((atuais) => [...atuais, { ...vaga, id: Math.max(0, ...atuais.map((item) => item.id)) + 1, publicoAlvo: "Mulheres" }]);
+    setVagasDisponiveis((atuais) => [...atuais, { ...vaga, id: Math.max(0, ...atuais.map((item) => item.id)) + 1, publicoAlvo: "Jovens" }]);
   }
 
   function removerVaga(id) {

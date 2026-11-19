@@ -18,7 +18,7 @@ function Cursos() {
         <div className={styles.heroContent}>
           <div>
             <p className={styles.eyebrow}>APRENDIZADO E INOVAÇÃO</p>
-            <h1>Mais mulheres criando o futuro em STEM.</h1>
+            <h1>Mais jovens criando o futuro em STEM.</h1>
             <p className={styles.heroDescription}>
               Explore cursos demonstrativos em ciência, tecnologia, engenharia e matemática.
             </p>
@@ -31,7 +31,7 @@ function Cursos() {
         <div className={styles.listingPanel}>
           <div className={styles.sectionHeading}>
             <div>
-              <p className={styles.sectionEyebrow}>FORMAÇÃO PARA MULHERES</p>
+              <p className={styles.sectionEyebrow}>FORMAÇÃO PARA JOVENS</p>
               <h2 id="courses-title">Cursos em universidades</h2>
               <p>Encontre uma formação e conheça as instituições participantes.</p>
             </div>
@@ -59,7 +59,7 @@ function Cursos() {
               {cursosFiltrados.map((curso) => (
                 <article className={styles.card} key={curso.id}>
                   <div className={styles.cardTop}>
-                    <span className={styles.audience}>Para mulheres em STEM</span>
+                    <span className={styles.audience}>Para jovens em STEM</span>
                     <span className={styles.area}>{curso.area}</span>
                   </div>
                   <h3>{curso.titulo}</h3>

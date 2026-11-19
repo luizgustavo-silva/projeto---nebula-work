@@ -59,5 +59,5 @@ export const cursosIniciais = catalogoInicial.map(([universidade, cidade, estado
   area,
   modalidade: modalidades[index % modalidades.length],
   duracao: duracoes[index % duracoes.length],
-  descricao: `Curso demonstrativo de ${area.toLocaleLowerCase("pt-BR")} para mulheres interessadas em desenvolver conhecimentos e explorar caminhos de atuação na área.`,
+  descricao: `Curso demonstrativo de ${area.toLocaleLowerCase("pt-BR")} para jovens interessadas em desenvolver conhecimentos e explorar caminhos de atuação na área.`,
 }));

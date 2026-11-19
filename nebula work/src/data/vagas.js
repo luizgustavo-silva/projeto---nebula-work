@@ -364,5 +364,5 @@ const oportunidades = [
 
 export const vagas = oportunidades.map((vaga) => ({
   ...vaga,
-  publicoAlvo: "Mulheres",
+  publicoAlvo: "Jovens",
 }));

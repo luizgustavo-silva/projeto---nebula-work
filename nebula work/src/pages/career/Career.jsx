@@ -31,7 +31,7 @@ function Career() {
         <div className={styles.heroContent}>
           <div>
             <p className={styles.eyebrow}>CIÊNCIA, TECNOLOGIA, ENGENHARIA E MATEMÁTICA</p>
-            <h1>O futuro da ciência também é feito por mulheres.</h1>
+            <h1>O futuro da ciência também é feito por jovens.</h1>
             <p className={styles.heroDescription}>Encontre oportunidades para transformar curiosidade em descobertas e ideias em inovação.</p>
           </div>
           <div className={styles.heroMark} aria-hidden="true">
@@ -67,7 +67,7 @@ function Career() {
           <div className={styles.sectionHeading}>
             <div>
               <p className={styles.sectionEyebrow}>SEU PRÓXIMO PASSO</p>
-              <h2 id="opportunities-title">Oportunidades para mulheres em STEM</h2>
+              <h2 id="opportunities-title">Oportunidades para jovens em STEM</h2>
               <p>Explore vagas em ciência, tecnologia, engenharia e matemática.</p>
             </div>
             <span className={styles.resultCount}>{vagasFiltradas.length} {vagasFiltradas.length === 1 ? "oportunidade" : "oportunidades"}</span>
@@ -80,7 +80,7 @@ function Career() {
               </button>
               <p className={styles.breadcrumb}>Carreiras STEM <span>›</span> {vagaSelecionada.nome}</p>
               <h3 id="job-details-title">Detalhes da oportunidade: {vagaSelecionada.nome}</h3>
-              <p className={styles.detailsIntro}>Conheça a faixa salarial e as informações desta oportunidade para mulheres em STEM.</p>
+              <p className={styles.detailsIntro}>Conheça a faixa salarial e as informações desta oportunidade para jovens em STEM.</p>
 
               <div className={styles.salaryPanel}>
                 <span>Faixa salarial informada</span>
@@ -117,7 +117,7 @@ function Career() {
               {vagasFiltradas.map((vaga) => (
                 <article className={styles.card} key={vaga.id}>
                   <div className={styles.cardTop}>
-                    <span className={styles.audience}>Para mulheres</span>
+                    <span className={styles.audience}>Para jovens</span>
                     <button
                       className={styles.arrow}
                       type="button"

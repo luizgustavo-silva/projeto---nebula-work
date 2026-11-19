@@ -1,4 +1,4 @@
-// Vagas ficticias para demonstracao, destinadas a mulheres.
+// Vagas ficticias para demonstracao, destinadas a jovens.
 export const vagasStem = [
   {
     id: 1,
@@ -8,7 +8,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 8.000 a R$ 12.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Projetar e desenvolver sistemas, colaborar em revisoes de codigo e contribuir para decisoes tecnicas.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 7.000 a R$ 11.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Analisar grandes conjuntos de dados, criar modelos estatisticos e comunicar resultados a equipes multidisciplinares.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 7.000 a R$ 10.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Desenvolver projetos estruturais, acompanhar obras e garantir conformidade com normas tecnicas.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 7.500 a R$ 11.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Projetar sistemas eletricos, analisar consumo e apoiar a implantacao de solucoes de eficiencia energetica.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 5,
@@ -48,7 +48,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 7.000 a R$ 10.500 por mes",
     tipo: "Efetivo CLT",
     descricao: "Projetar componentes e equipamentos, acompanhar testes e otimizar processos de fabricacao.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 6,
@@ -58,7 +58,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 7.500 a R$ 11.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Otimizar processos quimicos, monitorar parametros de producao e apoiar controles de qualidade e seguranca.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 7,
@@ -68,7 +68,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 6.500 a R$ 9.500 por mes",
     tipo: "Efetivo CLT",
     descricao: "Avaliar impactos ambientais, elaborar planos de mitigacao e acompanhar projetos de sustentabilidade.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 8,
@@ -78,7 +78,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 6.500 a R$ 9.500 por mes",
     tipo: "Efetivo CLT",
     descricao: "Analisar linhas de producao, mapear indicadores e implementar melhorias de eficiencia operacional.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 9,
@@ -88,7 +88,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 8.000 a R$ 12.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Construir pipelines de dados, integrar fontes e manter plataformas analiticas confiaveis e escalaveis.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 10,
@@ -98,7 +98,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 8.000 a R$ 13.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Monitorar riscos de seguranca, fortalecer controles e apoiar a resposta a incidentes em sistemas corporativos.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 11,
@@ -108,7 +108,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 9.000 a R$ 14.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Desenvolver e avaliar modelos de aprendizado de maquina com foco em desempenho, qualidade e uso responsavel.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 12,
@@ -118,7 +118,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 8.000 a R$ 12.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Integrar sensores e sistemas de controle, programar robos e validar prototipos em ambiente de testes.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 13,
@@ -128,7 +128,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 5.000 a R$ 8.000 por mes",
     tipo: "Tempo integral",
     descricao: "Conduzir estudos biologicos, documentar resultados e colaborar na divulgacao cientifica.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 14,
@@ -138,7 +138,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 5.500 a R$ 8.500 por mes",
     tipo: "Efetivo CLT",
     descricao: "Desenvolver experimentos biotecnologicos, analisar amostras e aprimorar protocolos de laboratorio.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 15,
@@ -148,7 +148,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 5.000 a R$ 7.500 por mes",
     tipo: "Efetivo CLT",
     descricao: "Realizar analises quimicas, validar metodos e registrar resultados conforme procedimentos de qualidade.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 16,
@@ -158,7 +158,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 6.000 a R$ 9.000 por mes",
     tipo: "Tempo integral",
     descricao: "Investigar propriedades de materiais, executar ensaios e interpretar dados experimentais.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 17,
@@ -168,7 +168,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 6.500 a R$ 10.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Criar modelos matematicos e algoritmos para resolver problemas de previsao e otimizacao.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 18,
@@ -178,7 +178,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 7.000 a R$ 10.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Interpretar dados geologicos, planejar levantamentos de campo e produzir relatorios tecnicos.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 19,
@@ -188,7 +188,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 5.500 a R$ 8.500 por mes",
     tipo: "Tempo integral",
     descricao: "Analisar dados astronomicos, desenvolver estudos sobre fenomenos celestes e publicar resultados cientificos.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 20,
@@ -198,7 +198,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 5.000 a R$ 8.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Coletar e analisar dados oceanograficos para apoiar pesquisas e projetos de conservacao marinha.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 21,
@@ -208,7 +208,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 8.000 a R$ 12.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Analisar sistemas aeroespaciais, apoiar testes de componentes e documentar requisitos de engenharia.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 22,
@@ -218,7 +218,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 7.000 a R$ 10.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Planejar redes de comunicacao, analisar cobertura e apoiar a implantacao de novas tecnologias.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 23,
@@ -228,7 +228,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 7.000 a R$ 10.500 por mes",
     tipo: "Efetivo CLT",
     descricao: "Projetar sistemas solares e eolicos, avaliar desempenho e apoiar estudos de viabilidade energetica.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 24,
@@ -238,7 +238,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 7.000 a R$ 10.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Programar sistemas de controle industrial, integrar equipamentos e acompanhar testes de automacao.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 25,
@@ -248,7 +248,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 7.000 a R$ 10.500 por mes",
     tipo: "Efetivo CLT",
     descricao: "Projetar circuitos eletronicos, criar prototipos e validar placas e componentes.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 26,
@@ -258,7 +258,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 6.500 a R$ 9.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Definir planos de inspecao, investigar nao conformidades e apoiar a melhoria continua de produtos.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 27,
@@ -268,7 +268,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 6.000 a R$ 9.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Processar dados biologicos com ferramentas computacionais e apoiar pesquisas em genetica e biologia molecular.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 28,
@@ -278,7 +278,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 6.000 a R$ 9.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Desenvolver processos e produtos alimenticios, acompanhar testes e assegurar padroes de qualidade.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 29,
@@ -288,7 +288,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 5.500 a R$ 8.500 por mes",
     tipo: "Tempo integral",
     descricao: "Avaliar ecossistemas, analisar indicadores ambientais e elaborar recomendacoes para conservacao.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 30,
@@ -298,7 +298,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 6.000 a R$ 9.000 por mes",
     tipo: "Tempo integral",
     descricao: "Analisar dados de saude populacional, identificar tendencias e apoiar estrategias de prevencao.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 31,
@@ -308,7 +308,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 8.000 a R$ 12.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Planejar operacoes de lavra, monitorar indicadores e apoiar praticas seguras e sustentaveis.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 32,
@@ -318,7 +318,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 6.500 a R$ 9.500 por mes",
     tipo: "Efetivo CLT",
     descricao: "Analisar fluxos de transporte e desenvolver solucoes de mobilidade acessiveis e sustentaveis.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 33,
@@ -328,7 +328,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 7.000 a R$ 11.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Criar funcionalidades para aplicativos, integrar servicos e colaborar em testes e melhorias de usabilidade.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 34,
@@ -338,7 +338,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 10.000 a R$ 15.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Projetar arquiteturas em nuvem, orientar migracoes e definir praticas de disponibilidade e custos.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 35,
@@ -348,7 +348,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 5.000 a R$ 7.500 por mes",
     tipo: "Efetivo CLT",
     descricao: "Processar dados geoespaciais, produzir mapas tematicos e apoiar analises territoriais.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 36,
@@ -358,7 +358,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 6.500 a R$ 9.500 por mes",
     tipo: "Efetivo CLT",
     descricao: "Caracterizar materiais, conduzir ensaios e colaborar no desenvolvimento de novas aplicacoes.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 37,
@@ -368,7 +368,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 5.500 a R$ 8.500 por mes",
     tipo: "Tempo integral",
     descricao: "Planejar estudos em neurociencia, analisar resultados e contribuir para pesquisas interdisciplinares.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 38,
@@ -378,7 +378,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 7.000 a R$ 10.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Especificar instrumentos de medicao, apoiar calibracoes e validar equipamentos para aplicacoes tecnicas.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 39,
@@ -388,7 +388,7 @@ export const vagasStem = [
     faixaSalarial: "R$ 6.500 a R$ 10.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Desenhar estudos estatisticos, validar analises e apoiar decisoes baseadas em evidencias.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
   {
     id: 40,
@@ -398,6 +398,6 @@ export const vagasStem = [
     faixaSalarial: "R$ 5.500 a R$ 8.000 por mes",
     tipo: "Efetivo CLT",
     descricao: "Monitorar sistemas de energia, analisar dados operacionais e apoiar iniciativas de eficiencia.",
-    publicoAlvo: "Mulheres",
+    publicoAlvo: "Jovens",
   },
 ];

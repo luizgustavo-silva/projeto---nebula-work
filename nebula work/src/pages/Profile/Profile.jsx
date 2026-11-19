@@ -92,7 +92,7 @@ function Profile() {
           {user.role === "admin" && "Gerencie as oportunidades exibidas na página inicial."}
           {user.role === "candidate" && "Acompanhe suas vagas salvas e os cursos em que se inscreveu."}
           {user.role === "company" && "Atualize as informações públicas da sua empresa."}
-          {user.role === "university" && "Publique e gerencie cursos para mulheres em STEM."}
+          {user.role === "university" && "Publique e gerencie cursos para jovens em STEM."}
         </p>
       </header>
 
@@ -167,7 +167,7 @@ function Profile() {
         <div className={styles.adminLayout}>
           <section className={styles.panel}>
             <h2>Adicionar oportunidade</h2>
-            <p className={styles.panelDescription}>A nova vaga será exibida na busca da página inicial e marcada para mulheres.</p>
+            <p className={styles.panelDescription}>A nova vaga será exibida na busca da página inicial e marcada para jovens.</p>
             <form className={styles.form} onSubmit={enviarVaga}>
               <label>
                 Cargo
@@ -246,7 +246,7 @@ function Profile() {
               <textarea required rows="4" value={empresaForm.descricao} onChange={(event) => setRascunhoEmpresa({ ...empresaForm, descricao: event.target.value })} />
             </label>
             <label className={styles.fullField}>
-              Iniciativa para mulheres
+              Iniciativa para jovens
               <textarea required rows="3" value={empresaForm.iniciativa} onChange={(event) => setRascunhoEmpresa({ ...empresaForm, iniciativa: event.target.value })} />
             </label>
             <button type="submit" className={styles.primaryButton}>Salvar configurações</button>
