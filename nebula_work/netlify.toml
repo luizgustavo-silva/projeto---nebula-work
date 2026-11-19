@@ -1,0 +1,9 @@
+[build]
+  command = "npm install --include=dev && npm run build"
+  publish = "dist"
+
+# SPA: send every route to index.html so React Router handles it
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
