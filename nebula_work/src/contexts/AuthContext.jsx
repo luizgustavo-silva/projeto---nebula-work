@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { empresas as empresasIniciais } from "../data/empresas.js";
 import { usuariosDemo } from "../data/demoAccounts.js";
 import { cursosIniciais, universidades } from "../data/cursos.js";
+import { normalizarOportunidade } from "../data/opportunity.js";
 import { vagas } from "../data/vagas.js";
 import { AuthContext } from "./AuthContextStore.js";
 
@@ -37,11 +38,33 @@ function exigirPermissao(condicao, mensagem) {
   if (!condicao) throw new Error(mensagem);
 }
 
+function carregarVagas() {
+  const vagasSalvas = lerArmazenamento("nebula-jobs", null);
+  if (!Array.isArray(vagasSalvas)) return vagas;
+
+  const chaveMigracao = "nebula-jobs-joinville-v1";
+  const jaMigradas = window.localStorage.getItem(chaveMigracao) === "true";
+  const idsSalvos = new Set(vagasSalvas.map((vaga) => vaga.id));
+  const novasVagas = jaMigradas ? [] : vagas.filter((vaga) => vaga.id >= 41 && !idsSalvos.has(vaga.id));
+
+  if (!jaMigradas) window.localStorage.setItem(chaveMigracao, "true");
+
+  return [...vagasSalvas, ...novasVagas].map((vaga, indice) => normalizarOportunidade(vaga, indice));
+}
+
+function carregarEmpresas() {
+  const empresasSalvas = lerArmazenamento("nebula-companies", empresasIniciais);
+  if (!Array.isArray(empresasSalvas)) return empresasIniciais;
+
+  const idsSalvos = new Set(empresasSalvas.map((empresa) => empresa.id));
+  return [...empresasSalvas, ...empresasIniciais.filter((empresa) => !idsSalvos.has(empresa.id))];
+}
+
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(carregarUsuario);
-  const [vagasDisponiveis, setVagasDisponiveis] = useState(() => lerArmazenamento("nebula-jobs", vagas));
+  const [vagasDisponiveis, setVagasDisponiveis] = useState(carregarVagas);
   const [salvasPorUsuario, setSalvasPorUsuario] = useState(() => lerArmazenamento("nebula-saved-jobs", {}));
-  const [empresas, setEmpresas] = useState(() => lerArmazenamento("nebula-companies", empresasIniciais));
+  const [empresas, setEmpresas] = useState(carregarEmpresas);
   const [cursos, setCursos] = useState(() => lerArmazenamento("nebula-courses", cursosIniciais));
   const [inscricoesPorUsuario, setInscricoesPorUsuario] = useState(() => lerArmazenamento("nebula-course-enrollments", {}));
 
@@ -93,7 +116,7 @@ export function AuthProvider({ children }) {
 
   function adicionarVaga(vaga) {
     exigirPermissao(user?.role === "admin", "Somente a conta administradora pode adicionar vagas.");
-    setVagasDisponiveis((atuais) => [...atuais, { ...vaga, id: Math.max(0, ...atuais.map((item) => item.id)) + 1, publicoAlvo: "Jovens" }]);
+    setVagasDisponiveis((atuais) => [...atuais, normalizarOportunidade({ ...vaga, id: Math.max(0, ...atuais.map((item) => item.id)) + 1 }, atuais.length)]);
   }
 
   function removerVaga(id) {

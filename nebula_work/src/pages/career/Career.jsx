@@ -102,6 +102,14 @@ function Career() {
                   <strong>{vagaSelecionada.tipo}</strong>
                 </div>
                 <div>
+                  <span>Carga horária</span>
+                  <strong>{vagaSelecionada.cargaHoraria}</strong>
+                </div>
+                <div>
+                  <span>Faixa etária</span>
+                  <strong>{vagaSelecionada.faixaEtaria}</strong>
+                </div>
+                <div>
                   <span>Público-alvo</span>
                   <strong>{vagaSelecionada.publicoAlvo}</strong>
                 </div>

@@ -1,5 +1,7 @@
 // Vagas ficticias para demonstracao, destinadas a jovens.
-export const vagasStem = [
+import { normalizarOportunidade } from "./opportunity.js";
+
+const oportunidadesStem = [
   {
     id: 1,
     nome: "Engenheira de Software",
@@ -401,3 +403,5 @@ export const vagasStem = [
     publicoAlvo: "Jovens",
   },
 ];
+
+export const vagasStem = oportunidadesStem.map((vaga, indice) => normalizarOportunidade(vaga, indice));

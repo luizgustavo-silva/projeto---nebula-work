@@ -70,16 +70,8 @@ function Home() {
               <section className={styles.listaVagas} aria-label="Lista de vagas">
                 {vagasFiltradas.length > 0 ? (
                   vagasFiltradas.map((vaga) => (
-                    <article
-                      className={`${styles.card} ${vaga.id === vagaSelecionada?.id ? styles.cardSelecionado : ""}`}
-                      key={vaga.id}
-                    >
-                      <button
-                        className={styles.cardMain}
-                        type="button"
-                        onClick={() => setVagaSelecionadaId(vaga.id)}
-                        aria-pressed={vaga.id === vagaSelecionada?.id}
-                      >
+                    <article className={`${styles.card} ${vaga.id === vagaSelecionada?.id ? styles.cardSelecionado : ""}`} key={vaga.id}>
+                      <button className={styles.cardMain} type="button" onClick={() => setVagaSelecionadaId(vaga.id)} aria-pressed={vaga.id === vagaSelecionada?.id}>
                         <span className={styles.cardCabecalho}>
                           <span className={styles.tipo}>{vaga.tipo}</span>
                           <span className={styles.publicoAlvo}>Afirmativa para {vaga.publicoAlvo.toLocaleLowerCase("pt-BR")}</span>
@@ -94,7 +86,9 @@ function Home() {
                           {vagasSalvas.includes(vaga.id) ? "Salva no perfil" : "Salvar vaga"}
                         </button>
                       ) : !user ? (
-                        <button className={styles.saveJobButton} type="button" onClick={() => navigate("/login")}>Entrar para salvar</button>
+                        <button className={styles.saveJobButton} type="button" onClick={() => navigate("/login")}>
+                          Entrar para salvar
+                        </button>
                       ) : null}
                     </article>
                   ))
@@ -120,6 +114,14 @@ function Home() {
                         <dd>{vagaSelecionada.tipo}</dd>
                       </div>
                       <div>
+                        <dt>Carga horária</dt>
+                        <dd>{vagaSelecionada.cargaHoraria}</dd>
+                      </div>
+                      <div>
+                        <dt>Faixa etária</dt>
+                        <dd>{vagaSelecionada.faixaEtaria}</dd>
+                      </div>
+                      <div>
                         <dt>Localidade</dt>
                         <dd>{vagaSelecionada.localidade}</dd>
                       </div>
@@ -136,13 +138,12 @@ function Home() {
         <>
           <img src={logo} className={styles.logo} alt="Nebula Work" />
           <div className={styles.logoContainer}>
-            <h2>Sua próxima vaga começa aqui</h2>
-            <p>Crie ou acesse uma conta para ver recomendações de vaga personalizadas.</p>
-              <Link to="/login" className={styles.btnLogin2}>
-                Começar
-                <FaLongArrowAltRight size={25} />
-              </Link>
-            
+            <h2>Sua oportunidade começa aqui</h2>
+            <p>Crie sua conta ou faça login para descobrir qual oportunidade mais combina com você.</p>
+            <Link to="/login" className={styles.btnLogin2}>
+              Começar
+              <FaLongArrowAltRight size={25} />
+            </Link>
           </div>
         </>
       )}

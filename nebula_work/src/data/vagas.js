@@ -1,4 +1,6 @@
 // Dados ficticios para demonstracao; empresas e enderecos nao sao reais.
+import { normalizarOportunidade } from "./opportunity.js";
+
 const oportunidades = [
   {
     id: 1,
@@ -360,9 +362,38 @@ const oportunidades = [
     tipo: "Efetivo CLT",
     descricao: "Cadastrar conteudos, revisar informacoes de paginas e apoiar a organizacao de publicacoes digitais.",
   },
+  {
+    id: 41,
+    nome: "Estagio em Automacao Industrial",
+    empresa: "Kernwerk Automacao",
+    localidade: "Distrito Industrial, Joinville - SC",
+    tipo: "Estágio",
+    descricao: "Apoiar testes de equipamentos, documentar processos e aprender sobre automacao industrial com supervisao.",
+  },
+  {
+    id: 42,
+    nome: "Menor Aprendiz - Apoio a Producao",
+    empresa: "Movimento Industrial",
+    localidade: "Zona Industrial Norte, Joinville - SC",
+    tipo: "Menor aprendiz",
+    descricao: "Apoiar a organizacao de materiais e conhecer rotinas de producao em ambiente supervisionado.",
+  },
+  {
+    id: 43,
+    nome: "Bolsista em Robotica",
+    empresa: "Solstice Robotics",
+    localidade: "Centro, Joinville - SC",
+    tipo: "Bolsista",
+    descricao: "Participar de atividades introdutorias de robotica, prototipagem e testes de sistemas automatizados.",
+  },
+  {
+    id: 44,
+    nome: "Estagio em Analise de Dados",
+    empresa: "Northstar BioLabs",
+    localidade: "Distrito de Inovacao, Joinville - SC",
+    tipo: "Estágio",
+    descricao: "Organizar dados de projetos de pesquisa e apoiar analises com orientacao da equipe de biotecnologia.",
+  },
 ];
 
-export const vagas = oportunidades.map((vaga) => ({
-  ...vaga,
-  publicoAlvo: "Jovens",
-}));
+export const vagas = oportunidades.map((vaga, indice) => normalizarOportunidade(vaga, indice));

@@ -320,6 +320,38 @@ const empresasBase = [
     especialidade: "Biologia celular e diagnostico laboratorial",
     iniciativa: "Politicas de desenvolvimento e promocao de jovens cientistas.",
   },
+  {
+    nome: "Kernwerk Automacao",
+    setor: "Engenharia",
+    localidade: "Joinville - SC · origem: Alemanha",
+    descricao: "Unidade brasileira ficticia de uma empresa alema de automacao e tecnologia industrial.",
+    especialidade: "Robotica, mecatronica e automacao industrial",
+    iniciativa: "Programa de estagio e aprendizagem com acompanhamento tecnico em Joinville.",
+  },
+  {
+    nome: "Northstar BioLabs",
+    setor: "Biotecnologia",
+    localidade: "Toronto - Canada",
+    descricao: "Empresa canadense ficticia dedicada a pesquisa biotecnologica e desenvolvimento de solucoes para saude.",
+    especialidade: "Biotecnologia e analise de dados biologicos",
+    iniciativa: "Bolsas de pesquisa e mentoria para jovens em ciencias da vida.",
+  },
+  {
+    nome: "Solstice Robotics",
+    setor: "Engenharia",
+    localidade: "Austin - EUA",
+    descricao: "Empresa americana ficticia que cria sistemas roboticos para manufatura e logistica.",
+    especialidade: "Robotica e sistemas autonomos",
+    iniciativa: "Trilhas de aprendizagem para jovens em engenharia e tecnologia.",
+  },
+  {
+    nome: "Atelier NovaTech",
+    setor: "Tecnologia",
+    localidade: "Lyon - Franca",
+    descricao: "Empresa francesa ficticia que desenvolve produtos digitais e ferramentas para ciencia.",
+    especialidade: "Software, design digital e tecnologia cientifica",
+    iniciativa: "Estagios e bolsas para jovens que iniciam carreira em tecnologia.",
+  },
 ];
 
 export const empresas = empresasBase.map((empresa, index) => ({

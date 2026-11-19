@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Link } from "react-router";
 import { useAuth } from "../../contexts/useAuth.js";
 import { universidades } from "../../data/cursos.js";
+import { tiposOportunidade } from "../../data/opportunity.js";
 import styles from "./Profile.module.css";
 
 const initialJob = {
   nome: "",
   empresa: "",
   localidade: "",
-  faixaSalarial: "",
-  tipo: "",
+  tipo: tiposOportunidade[0],
   descricao: "",
 };
 
@@ -183,12 +183,15 @@ function Profile() {
               </label>
               <label>
                 Faixa salarial
-                <input required value={vagaForm.faixaSalarial} onChange={(event) => setVagaForm({ ...vagaForm, faixaSalarial: event.target.value })} placeholder="Ex.: R$ 5.000 a R$ 7.000 por mês" />
+                <input value="R$ 800 a R$ 1.300 por mês" readOnly />
               </label>
               <label>
                 Tipo de contratação
-                <input required value={vagaForm.tipo} onChange={(event) => setVagaForm({ ...vagaForm, tipo: event.target.value })} placeholder="Ex.: Efetivo CLT" />
+                <select required value={vagaForm.tipo} onChange={(event) => setVagaForm({ ...vagaForm, tipo: event.target.value })}>
+                  {tiposOportunidade.map((tipo) => <option key={tipo} value={tipo}>{tipo}</option>)}
+                </select>
               </label>
+              <p className={styles.fullField}>Carga horária: {vagaForm.tipo === "Estágio" ? "6h" : "4h"} por dia · Faixa etária: 15 a 20 anos.</p>
               <label className={styles.fullField}>
                 Descrição
                 <textarea required rows="3" value={vagaForm.descricao} onChange={(event) => setVagaForm({ ...vagaForm, descricao: event.target.value })} />
