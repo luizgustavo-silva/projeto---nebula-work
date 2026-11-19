@@ -39,7 +39,7 @@ function Login() {
             autoComplete="username"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            placeholder="voce@exemplo.com"
+            placeholder="seu.email@exemplo.com"
             required
           />
           <label htmlFor="senha">Senha</label>

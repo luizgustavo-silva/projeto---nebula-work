@@ -50,7 +50,7 @@ function Home() {
             id="busca-localidades"
             value={searchLocalidades}
             onChange={(event) => setSearchLocalidades(event.target.value)}
-            placeholder="Cidade, estado, regiao ou remoto"
+            placeholder="Cidade, estado, região ou remoto"
             className={styles.inputBusca}
           />
         </div>
